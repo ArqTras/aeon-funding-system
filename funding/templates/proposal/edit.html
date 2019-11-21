@@ -65,12 +65,12 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Target <small>(in AEON)</small></label>
+                        <label>Target <small>(in ARQ)</small></label>
                         <input {% if funds_target %}disabled{% endif %} id="funds_target" type="text" name="funds_target" class="form-control" placeholder="Target" value="{{ funds_target }}">
                     </div>
 
                     <div class="form-group">
-                        <label>Receiving address for withdrawals <small>(Your AEON address)</small></label>
+                        <label>Receiving address for withdrawals <small>(Your ARQ address)</small></label>
                         <input {% if addr_receiving %}disabled{% endif %} id="addr_receiving" type="text" name="addr_receiving" class="form-control" placeholder="Wm..." value="{{ addr_receiving }}">
                     </div>
 
@@ -123,7 +123,7 @@
         function submit_proposal() {
             document.getElementById('submit_button').disabled = 'disabled';
 
-            function enable_button() { 
+            function enable_button() {
                 document.getElementById('submit_button').disabled = 'enabled';
             }
             setTimeout(enable_button, 10000);;

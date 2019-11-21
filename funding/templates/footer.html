@@ -6,15 +6,15 @@
 					Wallet:
 					{% if walletheight['height'] == 0 %}
 					<span style="color: red; font-weight: bold;">OFFLINE</span>
-					{% else %} 
+					{% else %}
 					<span style="color: #00ff00; font-weight: bold;">Online</span> (height: {{ walletheight['height'] }})
 					{% endif %}
 				</p>
 			</div>
 			<div class="col-sm-auto">
 				<p class="m-0 text-center text-white">
-					Daemon: 
-					{% if daemonheight %} 
+					Daemon:
+					{% if daemonheight %}
 					{% if daemonheight['status'] != 'Offline' %}
 					<span style="color: #00ff00; font-weight: bold;">Online</span> (height: {{ daemonheight['height'] }})
 					{%else%}
@@ -25,7 +25,7 @@
 			</div>
 			<div class="col-sm-12">
 				<p class="m-0 text-center text-white">
-					AEONFunding.com - 2018
+					funding.arqma.com - 2018 -> ~
 				</p>
 			</div>
 		</div>

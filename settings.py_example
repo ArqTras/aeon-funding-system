@@ -6,17 +6,17 @@ import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 SECRET = ''
 DEBUG = True
-SITE_URL = ''
+SITE_URL = 'funding.arqma.com'
 
-COINCODE = ''
+COINCODE = 'ARQMA'
 
 MAIL_SERVER = 'smtp.gmail.com'
 MAIL_PORT = 465
 MAIL_USE_SSL = True
 MAIL_USE_TLS = False
-MAIL_USERNAME = 'vanmorrison@gmail.com'
+MAIL_USERNAME = 'arqmafunding@gmail.com'
 MAIL_PASSWORD = ''
-MAIL_DEFAULT_SENDER = '"{coincode} Funding System" <aeonfundingsystem@gmail.com>'.format(coincode=COINCODE)
+MAIL_DEFAULT_SENDER = '"{coincode} Funding System" <arqmafunding@gmail.com>'.format(coincode=COINCODE)
 
 PSQL_USER = ''
 PSQL_PASS = ''
@@ -43,7 +43,7 @@ HOSTNAME = os.environ.get("{coincode}_HOSTNAME", socket.gethostname()).format(co
 # If using a local RPC, no need for --rpc-login credentials unless you're binding wallet-rpc to 0.0.0.0. If you are, you're bad.
 # elif, remote wallet-rpc, enable --rpc-login and enter credentials below.
 RPC_HOST = '127.0.0.1'
-RPC_PORT = '11182'
+RPC_PORT = '19988'
 RPC_LOCATION = "http://{host}:{rpc_port}/json_rpc".format(host=RPC_HOST, rpc_port=RPC_PORT)
 RPC_USERNAME = ""
 RPC_PASSWORD = ""

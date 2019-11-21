@@ -54,12 +54,12 @@ class Daemon:
         data = self._make_request(data)
         data = data['result'].get('in', [])
         for d in data:
-            d['amount_human'] = float(d['amount'])/1e12
+            d['amount_human'] = float(d['amount'])/1e9
         return {
-            'sum': sum([float(z['amount'])/1e12 for z in data]),
+            'sum': sum([float(z['amount'])/1e9 for z in data]),
             'txs': data
         }
-    
+
     def get_transfers_out(self, index, proposal_id):
         data = {
             "method":"get_transfers",
@@ -70,9 +70,9 @@ class Daemon:
         data = self._make_request(data)
         data = data['result'].get('out', [])
         for d in data:
-            d['amount_human'] = float(d['amount'])/1e12
+            d['amount_human'] = float(d['amount'])/1e9
         return {
-            'sum': sum([float(z['amount'])/1e12 for z in data]),
+            'sum': sum([float(z['amount'])/1e9 for z in data]),
             'txs': data
         }
 
@@ -93,7 +93,7 @@ class Daemon:
             return s.json()
 
     def get_wallet_height(self):
-        data = { 
+        data = {
             "method":"getheight",
             "jsonrpc": "2.0",
             "id": "0",
@@ -101,13 +101,13 @@ class Daemon:
         try:
             data = self._make_request(data)
             return data['result']
-        except: 
+        except:
             offline_Wallet = {'height': 0}
             data['result'] = eval(json.dumps(offline_Wallet))
             return data['result']
 
     def get_daemon_height(self):
-        daemon_data = { 
+        daemon_data = {
             "method":"get_info",
             "jsonrpc": "2.0",
             "id": "0"

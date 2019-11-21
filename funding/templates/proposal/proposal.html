@@ -77,7 +77,7 @@
                                                 <td><span class="badge">
                                                     {% if proposal.balance['pct'] %}
                                                         {{proposal.balance['pct'] | round or 0}}
-                                                    {% else %} 
+                                                    {% else %}
                                                         0
                                                     {% endif %}%
                                                     </span>
@@ -105,29 +105,29 @@
                                 </div>
                                 <div class="col-lg-8">
                                     {% if proposal.balance['available'] %}
-                                        {{proposal.balance['available']|round(3) or 0 }} {{ coincode }} Raised 
-                                        {% if (proposal.funds_target-proposal.balance['available']|float|round(3)) > 0 %} 
+                                        {{proposal.balance['available']|round(3) or 0 }} {{ coincode }} Raised
+                                        {% if (proposal.funds_target-proposal.balance['available']|float|round(3)) > 0 %}
                                             ({{ (proposal.funds_target-proposal.balance['available']|float|round(3)|int) }} {{ coincode }} until goal)
-                                            {% else %} 
+                                            {% else %}
                                             ({{ (proposal.balance['available']-proposal.funds_target)|round(3) }} {{ coincode }} past goal!)
                                         {% endif %}
-                                    {% else%} 
-                                    0 {{ coincode }} Raised 
+                                    {% else%}
+                                    0 {{ coincode }} Raised
                                     {% endif %}
                                     <div class="progress">
                                         <div class="progress-bar progress-warning progress-bar" style="width: {{proposal.balance['pct']}}%;">
-                                        </div> 
+                                        </div>
                                     </div>
                                     <hr>
                                 </div>
                                 <br/>
-                                
+
                                 <br/>
                                 <div class="col-lg-8">
                                     {% if proposal.spends['spent'] %}
                                         {{proposal.spends['spent']|round(3) or 0}} {{ coincode }} Paid out ({{proposal.spends['fees']}} in fees)
                                     {% else %}
-                                        0 {{ coincode }} Paid Out 
+                                        0 {{ coincode }} Paid Out
                                     {% endif %}
                                     <div class="progress">
                                         <div class="progress-bar progress-warning progress-bar" style="width: {{proposal.spends['spent_remaining_pct']}}%;">
@@ -140,7 +140,7 @@
                                         {{((proposal.balance['available']-proposal.spends['spent'])-proposal.spends['fees']) |round(3) or 0}} {{ coincode }} Available to Payout
 
 
-                                    {% else %} 
+                                    {% else %}
                                     0 Avail
                                     {% endif %}
                                     <div class="progress">
@@ -213,7 +213,7 @@
                             {{tx['datetime'].strftime('%Y-%m-%d %H:%M')}}
                             <span style="float:right"><b>Blockheight</b>: {{tx['height']}}</span>
                             <br>
-                            <a target="_blank" href="https://aeonblocks.com/tx/{{tx['txid']}}">{{tx['txid'][:32]}}...</a>
+                            <a target="_blank" href="https://explorer.arqma.com/tx/{{tx['txid']}}">{{tx['txid'][:32]}}...</a>
                             <span style="float:right;color:#008926;font-weight:bold;">
                                 + {{tx['amount_human']|round(3)}} {{ coincode }}
                                 {% if 'amount_usd' in tx %}
@@ -245,7 +245,7 @@
                             {{tx['datetime'].strftime('%Y-%m-%d %H:%M')}}
                             <span style="float:right"><b>Blockheight</b>: {{tx['height']}}</span>
                             <br>
-                            <a target="_blank" href="https://aeonblocks.com/tx/{{tx['txid']}}">{{tx['txid'][:32]}}...</a>
+                            <a target="_blank" href="https://explorer.arqma.com/tx/{{tx['txid']}}">{{tx['txid'][:32]}}...</a>
                             <span style="float:right;color:#890000;font-weight:bold;">
                                 - {{tx['amount_human']|round(3)}} {{ coincode }}
 
@@ -256,7 +256,7 @@
                                 {% endif %}
                                 <br/><span style="float:right; color: #1230f0;">tx fee: {{ tx['fee_human']|round(10) }}</span>
                             </span>
-                           
+
                         </li>
                         {% endfor %}
                     </ul>
@@ -281,7 +281,7 @@
             </div>
         </div>
     </div>
- 
+
 </div>
 
 <script>
